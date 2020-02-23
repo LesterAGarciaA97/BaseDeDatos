@@ -1,2 +1,2 @@
-# Data Bases
-Data bases Course - Rafael Landívar University - 2020
+# Base de datos
+Curso de base de datos - Universidad Rafael Landívar - 2020
