@@ -69,7 +69,8 @@ Unique
 Foreign
 Primary
 Default
-check
+Check
+Not Null
 
 
 uc
