@@ -1,0 +1,9 @@
+-- 1) Crear una tabla resumen con la siguiente información sobre las ventas que se han realizado:
+--	a. Nombre completo del cliente
+--	b. Año de compra
+--	c. Mes de compra
+--	d. Cantidad de compras para ese año-mes del cliente
+--	e. Código de la primer OC de ese año-mes
+-- f. Número de meses de compra:
+--		g. De los productos de la primer OC, 6 meses para atrás, en cuántos de ellos realizó por lo menos una compra con alguno de dichos productos.
+-- Cree un procedimiendo el cual realice la operación descrita anteriormente y como primer paso trunque la tabla resumen.
