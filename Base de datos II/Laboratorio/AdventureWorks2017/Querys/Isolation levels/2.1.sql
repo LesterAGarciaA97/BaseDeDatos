@@ -1,0 +1,11 @@
+SET TRANSACTION ISOLATION LEVEL REPEATABLE READ;
+
+UPDATE Sales.SalesOrderDetail
+SET UnitPriceDiscount = 3.00
+WHERE SalesOrderID = 43689
+
+SELECT *
+FROM Sales.SalesOrderDetail
+WHERE SalesOrderID = 43689
+
+COMMIT TRAN
