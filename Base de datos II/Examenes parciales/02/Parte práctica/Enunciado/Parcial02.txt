@@ -1,0 +1,57 @@
+SERIE II
+
+Diseño ( 25 pts)
+
+Defina un diseño de base de datos y cree los objetos, que cumplan con las siguientes condiciones:
+
+Se desea llevar el control de eventos relacionados a números de teléfono de clientes. Para los cuales, solamente llevaremos el dato de:  Nombre, Apellido y DPI.  Cada uno de los clientes 
+puede tener más de un número de teléfono asociado pero un teléfono solamente puede pertenecer a un cliente en cierto momento o fecha, y los eventos que se pueden generar son: Llamadas, 
+Mensajes, Consumo de datos.
+
+Dentro de la información que se debe llevar de los eventos, como mínimo, debemos de poder guardar:
+
+-          Fecha
+
+-          Hora
+
+-          Origen (Número de teléfono origen del evento)
+
+-          Destino
+
+    Para llamadas y mensajes: número de teléfono destino del evento
+    Para datos:  IP o nombre del sitio web al que accedió
+
+-          Duración
+
+    Para llamadas: tiempo en segundos
+    Para mensajes: Número de mensajes enviados
+    Para datos: Número de MB consumidos.
+
+ 
+Procedimiento 1 ( 50 pts)
+
+Cada hora se realiza la lectura de un archivo csv, que tiene formato:
+
+-          fecha,hora,origen,destino,tipo,duración,estado
+
+    fecha: yyyymmdd
+    hora:  hhmmss
+    tipo: 1  = llamada, 2 = mensaje , 3 = datos
+    Estado: 1 = confirmado, 2 = no confirmado
+
+Ejemplo:
+
+-          20201030,012015,30253045,57839090,1,125,1
+
+-          20201125,113001,30253045,39492939,2,1,1
+
+-          20201125,053001,30253045,20492939,2,1,2
+
+-          20200102,230159,30253045, other.com,3,30,1
+
+-          20201125,053001,30253045,20492939,2,1,2    
+
+Se le solicita elaborar un procedimiento para INSERTAR la información en su modelo creado, debe manejar adecuadamente las transacciones y los errores en las mismas. Los usuarios 
+(como dwh o reportería) únicamente podrán consultar la información que ha sido confirmada (por nivel de aislamiento y/o por el flujo de la transacción:  estado confirmado = 1). Por 
+temas de eficiencia se debe confirmar ( commit ) cada 100 registros leídos. No debe permitir ingresar registros duplicados (manejar correctamente dicha operación por medio de un mensaje o 
+incluso bitácora de dichas operaciones).
